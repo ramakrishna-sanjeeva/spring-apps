@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<div>
+    <h1 class="title">OAuth 2.0 Spring Security Cognito Demo</h1>
+    <div sec:authorize="isAuthenticated()">
+        <div class="box">
+            Non-Admin Hello
+            <a class="button click is-primary" th:href="@{/api/hello}">
+                Click</a>
+        </div>
+        <div class="box">
+            Admin Hello
+            <a class="button click is-primary" th:href="@{/api/admin-hello}">
+                Click</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
